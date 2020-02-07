@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <OutputTypeEx>library</OutputTypeEx>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Handlers\VeiculoCommandHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="CadSage.Domain.csproj.vspscc" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.6.104" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="2.1.1" />
+    <PackageReference Include="System.Security.Claims" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadSage.Domain.Core\CadSage.Domain.Core.csproj" />
+  </ItemGroup>
+</Project>

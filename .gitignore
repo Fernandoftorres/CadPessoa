@@ -1,0 +1,54 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+server/.vs/CadSage.Project/DesignTimeBuild/.dtbcache
+server/.vs/CadSage.Project/config/applicationhost.config
+server/.vs/CadSage.Project/v16/
+server/src/CadSage.Domain/bin/Debug/
+server/src/CadSage.Domain/obj/
+server/src/CadSage.Domain.Core/bin/Debug/
+server/src/CadSage.Domain.Core/obj/
+server/src/CadSage.Infra.CrossCutting.IoC/bin/Debug/
+server/src/CadSage.Infra.CrossCutting.IoC/obj/
+server/src/CadSage.Infra.CrossCutting.IoC/bin/Debug/
+server/src/CadSage.Infra.CrossCutting.IoC/obj/
+server/src/CadSage.Infra.Data/bin/Debug/
+server/src/CadSage.Infra.Data/obj/
+server/src/CadSage.Services.Api/bin/Debug/
+server/src/CadSage.Services.Api/obj/

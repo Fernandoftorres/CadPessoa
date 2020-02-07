@@ -1,0 +1,111 @@
+<td-layout>
+  <td-layout-nav [toolbarTitle]="name">
+    <div layout-gt-sm="row" tdMediaToggle="gt-xs">
+      <div flex-gt-sm>
+        <mat-card tdMediaToggle="gt-xs">
+          <mat-card-content>
+            <td-steps>
+              <td-step [state]="state1" #step1 label="Dados Pessoais" sublabel="Nome, CPF, Email" active="true"
+                (deactivated)="update(1, form1.form.valid)">
+                <form #form1="ngForm" novalidate>
+                  <div layout="row">
+                    <mat-form-field flex>
+                      <input matInput maxlength="50" class="form-control" placeholder="Nome" #nome required name="nome"
+                        [(ngModel)]="pessoa.nome" ngControl="pessoa.nome">
+                      <mat-hint align="end">{{ nome.value.length }} / 50 </mat-hint>
+                    </mat-form-field>
+                  </div>
+                  <div layout="row">
+                    <mat-form-field flex>
+                      <input matInput maxlength="11" class="form-control" placeholder="CPF" #cpf required name="cpf"
+                        [(ngModel)]="pessoa.cpf" ngControl="pessoa.cpf">
+                      <mat-hint align="end">{{ cpf.value.length }} / 11 </mat-hint>
+                    </mat-form-field>
+                    <mat-form-field flex>
+                      <input matInput maxlength="50" class="form-control" placeholder="Email" #email required
+                        name="email" [(ngModel)]="pessoa.email" ngControl="pessoa.email" email>
+                      <mat-hint align="end">{{ email.value.length }} / 50 </mat-hint>
+                      <mat-error>
+                        Email inválido
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="push-top">
+                    <button class="text-upper" mat-button type="submit" color="accent" [disabled]="!form1.form.valid"
+                      (click)="step2.active = true">Continue</button>
+                    <button class="text-upper" mat-button
+                      (click)="step1.active = false; state1 = 'none'; form1.reset()">Cancel</button>
+                  </div>
+                  <ng-template td-step-summary>
+                    <mat-list>
+                      <mat-list-item>
+                        <mat-icon matListAvatar>account_box</mat-icon>
+                        <h4 matLine>{{nome.value}}</h4>
+                        <p matLine>{{cpf.value}}</p>
+                        <p matLine>{{email.value}}</p>
+                      </mat-list-item>
+                    </mat-list>
+                  </ng-template>
+                </form>
+              </td-step>
+              <td-step [state]="state2" #step2 label="Endereço" sublabel="Rua, Cidade, Estado, CEP"
+                (deactivated)="update(2, form2.form.valid)">
+                <form #form2="ngForm">
+                  <div layout="row">
+                    <mat-form-field flex>
+                      <input matInput maxlength="100" class="form-control" placeholder="Rua / Número / Complemento" #rua
+                        required name="rua" [(ngModel)]="pessoa.rua" ngControl="pessoa.rua">
+                      <mat-hint align="end">{{ rua.value.length }} / 100 </mat-hint>
+                    </mat-form-field>
+                    <mat-form-field flex>
+                      <input matInput maxlength="8" class="form-control" placeholder="CEP" #cep required name="cep"
+                        [(ngModel)]="pessoa.cep" ngControl="pessoa.cep">
+                      <mat-hint align="end">{{ cep.value.length }} / 8 </mat-hint>
+                    </mat-form-field>
+                  </div>
+
+                  <div layout="row">
+                    <mat-form-field flex>
+                      <input matInput maxlength="50" class="form-control" placeholder="Bairro" #bairro required
+                        name="bairro" [(ngModel)]="pessoa.bairro" ngControl="pessoa.bairro">
+                      <mat-hint align="end">{{ bairro.value.length }} / 50 </mat-hint>
+                    </mat-form-field>
+                    <mat-form-field flex>
+                      <input matInput maxlength="50" class="form-control" placeholder="Cidade" #cidade required
+                        name="cidade" [(ngModel)]="pessoa.cidade" ngControl="pessoa.cidade">
+                      <mat-hint align="end">{{ cidade.value.length }} / 50 </mat-hint>
+                    </mat-form-field>
+                    <mat-form-field flex>
+                      <mat-select class="form-control" #uf placeholder="UF" required name="uf" [(ngModel)]="pessoa.uf"
+                        ngControl="pessoa.uf">
+                        <mat-option *ngFor="let state of states" [value]="state">
+                          {{ state }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <ng-template td-step-summary>
+                    <mat-list>
+                      <mat-list-item>
+                        <mat-icon matListAvatar>place</mat-icon>
+                        <h5 matLine>{{rua.value}} - {{cep.value}}</h5>
+                        <h5 matLine>{{bairro.value}} - {{cidade.value}} - {{uf.value}}</h5>
+                        <p matLine>Endereço</p>
+                      </mat-list-item>
+                    </mat-list>
+                  </ng-template>
+                </form>
+              </td-step>
+            </td-steps>
+            <button class="push-top text-upper" [disabled]="!form1.form.valid || !form2.form.valid" mat-raised-button
+              color="accent" (click)="save()">Save</button>
+            <button class="text-upper" mat-button [routerLink]="'/pessoas'">Cancel</button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <td-layout-footer>
+      SAGE - Cadastro Pessoas
+    </td-layout-footer>
+  </td-layout-nav>
+</td-layout>

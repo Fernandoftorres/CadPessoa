@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CadSage.Infra.CrossCutting.IoC.csproj.vspscc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="automapper" Version="6.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.1.1" />
+    <PackageReference Include="microsoft.aspnetcore.http.abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.1.1" />
+    <PackageReference Include="microsoft.aspnetcore.mvc.abstractions" Version="2.1.1" />
+    <PackageReference Include="microsoft.aspnetcore.mvc.viewfeatures" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CadSage.Domain\CadSage.Domain.csproj" />
+    <ProjectReference Include="..\CadSage.Infra.Data\CadSage.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

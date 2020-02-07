@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>7fdfdfdf-1f32-4a56-86aa-f5c5ad7777a1</UserSecretsId>
+    <AssemblyName>CadSage.Services.Api</AssemblyName>
+    <RootNamespace>CadSage.Services.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Middleware\**" />
+    <Compile Remove="publish\**" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="Middleware\**" />
+    <Content Remove="publish\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="Middleware\**" />
+    <EmbeddedResource Remove="publish\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="Middleware\**" />
+    <None Remove="publish\**" />
+    <None Remove="wwwroot\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="CadSage.Api.csproj.vspscc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Xml" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+    <PackageReference Include="automapper.Extensions.Microsoft.DependencyInjection" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.4.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
+    <PackageReference Include="Nexmo.Csharp.Client" Version="4.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.0.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.4" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="3.0.0" />
+    <PackageReference Include="TimeZoneConverter" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CadSage.Domain\CadSage.Domain.csproj" />
+    <ProjectReference Include="..\CadSage.Infra.CrossCutting.IoC\CadSage.Infra.CrossCutting.IoC.csproj" />
+    <ProjectReference Include="..\CadSage.Infra.Data\CadSage.Infra.Data.csproj" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <ProjectReference Include="..\Eventos.IO.Domain.Core\Eventos.IO.Domain.Core.csproj" />
+    <ProjectReference Include="..\Eventos.IO.Domain\Eventos.IO.Domain.csproj" />
+    <ProjectReference Include="..\Eventos.IO.Infra.CrossCutting.AspNetFilters\Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj" />
+    <ProjectReference Include="..\Eventos.IO.Infra.CrossCutting.IoC\Eventos.IO.Infra.CrossCutting.IoC.csproj" />
+  </ItemGroup>-->
+
+</Project>
