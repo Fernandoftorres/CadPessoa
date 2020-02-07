@@ -26,7 +26,7 @@
 
  2.7 - Alguns prints
 
- ![Image1](https://prnt.sc/qyq0zw)
+ ![alt text](https://prnt.sc/qyq0zw)
 
  ![Image2](https://prnt.sc/qyq1dz)
 
