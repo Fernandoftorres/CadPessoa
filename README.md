@@ -1,3 +1,8 @@
+Tecnologias Utilizadas
+ - Net Core 2.0
+ - Angular 8
+ - Entity Framework Core
+ - Mediator
 
 1. Pré-requisitos
  
