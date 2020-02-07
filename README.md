@@ -24,10 +24,4 @@
 
  2.6 - Para acessar a aplicação basta digitar: http://localhost:4200/pessoas
 
- 2.7 - Alguns prints
-
- ![alt text](https://prnt.sc/qyq0zw)
-
- ![Image2](https://prnt.sc/qyq1dz)
-
- ![Image3]https://prnt.sc/qyq1g8)
+ 2.7 - Alguns prints na pasta prints
